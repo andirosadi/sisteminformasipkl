@@ -1,0 +1,129 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+</head>
+
+<body style="margin: 0;">
+
+<div id="p1" style="overflow: hidden; position: relative; background-color: white; width: 1286px; height: 909px;">
+
+<!-- Begin shared CSS values -->
+<style class="shared-css" type="text/css" >
+.t {
+	-webkit-transform-origin: bottom left;
+	-ms-transform-origin: bottom left;
+	transform-origin: bottom left;
+	-webkit-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	transform: scale(0.25);
+	z-index: 2;
+	position: absolute;
+	white-space: pre;
+	overflow: visible;
+	line-height: 1.5;
+}
+</style>
+<!-- End shared CSS values -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_1{left:541px;bottom:750px;word-spacing:0.3px;}
+#t2_1{left:494px;bottom:727px;word-spacing:0.3px;}
+#t3_1{left:370px;bottom:635px;word-spacing:0.7px;}
+#t4_1{left:471px;bottom:604px;word-spacing:-0.2px;}
+#t5_1{left:559px;bottom:558px;}
+#t6_1{left:495px;bottom:512px;letter-spacing:-0.1px;}
+#t7_1{left:660px;bottom:512px;letter-spacing:-0.1px;word-spacing:0.1px;}
+#t8_1{left:495px;bottom:489px;}
+#t9_1{left:605px;bottom:489px;word-spacing:0.1px;}
+#ta_1{left:495px;bottom:466px;letter-spacing:-0.1px;}
+#tb_1{left:605px;bottom:466px;word-spacing:-0.2px;}
+#tc_1{left:495px;bottom:443px;letter-spacing:-0.1px;}
+#td_1{left:605px;bottom:443px;word-spacing:0.1px;}
+#te_1{left:55px;bottom:374px;word-spacing:0.1px;}
+#tf_1{left:55px;bottom:351px;word-spacing:0.1px;}
+#tg_1{left:55px;bottom:328px;letter-spacing:-0.2px;}
+#th_1{left:874px;bottom:258px;word-spacing:0.2px;}
+#ti_1{left:888px;bottom:235px;}
+#tj_1{left:970px;bottom:120px;letter-spacing:-0.1px;}
+
+.s1{
+	FONT-SIZE: 73.3px;
+	FONT-FAMILY: DejaVuSans_c;
+	color: rgb(0,0,0);
+}
+
+.s2{
+	FONT-SIZE: 207.8px;
+	FONT-FAMILY: DejaVuSans_c;
+	color: rgb(0,0,0);
+}
+
+.s3{
+	FONT-SIZE: 73.3px;
+	FONT-FAMILY: DejaVuSans-Bold_h;
+	color: rgb(0,0,0);
+}
+
+.s4{
+	FONT-SIZE: 73.3px;
+	FONT-FAMILY: DejaVuSans-Bold_h;
+	color: rgb(255,255,255);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style id="fonts1" type="text/css" >
+
+@font-face {
+	font-family: DejaVuSans-Bold_h;
+    src: {{asset('nilai/fonts/DejaVuSans-Bold_h.woff')}};
+}
+
+@font-face {
+	font-family: DejaVuSans_c;
+    src: {{asset('nilai/fonts/DejaVuSans_c.woff')}};
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin page background -->
+<div id="pg1Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg1" style="-webkit-user-select: none;"><object width="1286" height="909" data="{{asset('nilai/1/1.svg')}}" type="image/svg+xml" id="pdf1" style="width:1286px; height:909px; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+@foreach($sertifikat as $sertifikats)
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_1" class="t s1">PT INDONESIA POWER</div>
+<div id="t2_1" class="t s1">UNIT PEMBANGKITAN SURALAYA</div>
+<div id="t3_1" class="t s2">SURAT KETERANGAN</div>
+<div id="t4_1" class="t s3">Nomor : 213.Skt/324/UPSLA/2018</div>
+<div id="t5_1" class="t s1">Diberikan Kepada:</div>
+<div id="t6_1" class="t s3">Nama</div>
+<div id="t7_1" class="t s3">: {{$sertifikats->name}}</div>
+<div id="t8_1" class="t s3">NIM</div>
+<div id="t9_1" class="t s3">: 155150201111265</div>
+<div id="ta_1" class="t s3">Jurusan</div>
+<div id="tb_1" class="t s3">: Teknik Informatika</div>
+<div id="tc_1" class="t s3">Institusi</div>
+<div id="td_1" class="t s3">: Universitas Brawijaya</div>
+<div id="te_1" class="t s1">Menerangkan bahwa yang bersangkutan telah melaksanakan Praktek Kerja Lapangan di Bidang “SISTEM INFORMASI DAN </div>
+<div id="tf_1" class="t s1">JARINGAN DI PT INDONESIA POWER UNIT PEMBANGKITAN SURALAYA” terhitung mulai tanggal 02 Juli 2018 s/d 31 Agustus </div>
+<div id="tg_1" class="t s1">2018.</div>
+<div id="th_1" class="t s1">Suralaya, 31 Agustus 2018.</div>
+<div id="ti_1" class="t s1">MANAJER SDM &amp; HUMAS</div>
+<div id="tj_1" class="t s4">NAMA</div>
+@endforeach
+<!-- End text definitions -->
+
+
+</div>
+</body>
+</html>

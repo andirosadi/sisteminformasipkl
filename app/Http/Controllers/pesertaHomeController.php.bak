@@ -1,0 +1,39 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Auth;
+use app\User;
+use app\Pendaftar;
+
+class pesertaHomeController extends Controller
+{
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth:pendaftar');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
+        $user = Auth::user();
+        if($user->role_id != 1)
+        {
+            if($user->role_id =2)
+            {
+                return view('home');
+            }
+        }
+        return view('homeadmin');
+    }
+}
