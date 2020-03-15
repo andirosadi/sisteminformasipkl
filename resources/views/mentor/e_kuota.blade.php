@@ -2,7 +2,7 @@
 @section('content')
 <div class="row">
     <div class="col-md-12">
-        <div class="card shadow-sm" style="border-radius: .40rem!important">
+        <div class="card shadow-sm" style="border-radius: 10px!important">
             <form action="{{url('m_kuota/'.$kuota->id)}}" method="post" class="form-horizontal">
                 {{csrf_field()}}
                 {{method_field('PATCH')}}

@@ -2,10 +2,10 @@
 @section('content')
 <div class="row">
     <div class="col-md-12">
-        <div class="card shadow-sm" style="border-radius:.40rem!important">
+        <div class="card shadow-sm" style="border-radius:10px!important">
             <div class="card-body">
                 <h4 class="card-title">Tambah Nilai</h4>
-                <div class="alert alert-warning" role="alert" style="border-radius:.40rem!important">
+                <div class="alert alert-warning" role="alert" style="border-radius:10px!important">
                     <h4 class="alert-heading">Keterangan</h4>
                     <p>Keterangan nilai berdasarkan ketetapan perusahaan PT. Indonesia Power UP Suralaya.</p>
                     <hr>
