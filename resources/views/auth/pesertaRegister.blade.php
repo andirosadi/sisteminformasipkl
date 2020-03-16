@@ -212,13 +212,10 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('peserta.register') }}" enctype="multipart/form-data">
                         @csrf
-
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
-
                                 @if ($errors->has('name'))
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $errors->first('name') }}</strong>
@@ -226,13 +223,10 @@
                                 @endif
                             </div>
                         </div>
-
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-
                                 @if ($errors->has('email'))
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $errors->first('email') }}</strong>
@@ -240,13 +234,11 @@
                                 @endif
                             </div>
                         </div>
-
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Sekolah/Universitas') }}</label>
 
                             <div class="col-md-6">
                                 <input id="sekolah" type="text" class="form-control{{ $errors->has('sekolah') ? ' is-invalid' : '' }}" name="sekolah" value="{{ old('sekolah') }}" required autofocus>
-
                                 @if ($errors->has('sekolah'))
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $errors->first('sekolah') }}</strong>
@@ -254,13 +246,10 @@
                                 @endif
                             </div>
                         </div>
-
                         <div class="form-group row">
                             <label for="nip" class="col-md-4 col-form-label text-md-right">{{ __('NIM') }}</label>
-
                             <div class="col-md-6">
                                 <input id="nim" type="number" class="form-control @error('nim') is-invalid @enderror" name="nim" value="{{ old('nim') }}" required autocomplete="nip" autofocus>
-
                                 @error('nim')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -268,13 +257,10 @@
                                 @enderror
                             </div>
                         </div>
-
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Fakultas') }}</label>
-
                             <div class="col-md-6">
                                 <input id="fakultas" type="text" class="form-control{{ $errors->has('fakultas') ? ' is-invalid' : '' }}" name="fakultas" value="{{ old('fakultas') }}" required autofocus>
-
                                 @if ($errors->has('fakultas'))
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $errors->first('fakultas') }}</strong>
@@ -282,13 +268,10 @@
                                 @endif
                             </div>
                         </div>
-
                         <div class="form-group row">
                             <label for="jurusan" class="col-md-4 col-form-label text-md-right">{{ __('Jurusan') }}</label>
-
                             <div class="col-md-6">
                                 <input id="jurusan" type="text" class="form-control{{ $errors->has('jurusan') ? ' is-invalid' : '' }}" name="jurusan" value="{{ old('jurusan') }}" required autofocus>
-
                                 @if ($errors->has('jurusan'))
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $errors->first('jurusan') }}</strong>
@@ -296,11 +279,15 @@
                                 @endif
                             </div>
                         </div>
-
                         <div class="form-group row">
                             <label for="suratpermohonan" class="col-md-4 col-form-label text-md-right">{{ __('Surat Permohonan') }}</label>
                             <div class="col-md-6">
-                                <input type="file" class="form-control-file" id="suratpermohonan" name="suratpermohonan">
+                                <input type="file" class="form-control-file{{ $errors->has('suratpermohonan') ? ' is-invalid' : '' }}" id="suratpermohonan" name="suratpermohonan">
+                                @if ($errors->has('suratpermohonan'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>Surat permohonan harus sesuai dengan format!</strong>
+                                </span>
+                                @endif
                             </div>
                         </div>
 

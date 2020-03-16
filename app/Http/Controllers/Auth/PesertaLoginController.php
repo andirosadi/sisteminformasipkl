@@ -167,6 +167,7 @@ class PesertaLoginController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|max:199|unique:pendaftars',
             'password' => 'required|string|min:6|confirmed',
+            'suratpermohonan' => 'required|file|mimes:doc,docx,pdf|max:5000'
         ]);
         $suratpermohonan = $request->file('suratpermohonan');
         $suratpermohonan->getClientOriginalName();
