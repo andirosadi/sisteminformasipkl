@@ -11,11 +11,21 @@
                     <hr>
                     <div class="col text-center">
                         <div class="btn-group btn-group-justified">
-                            <a class="btn btn-success "><h6 class="text-white">A = Memuaskan (96-100)</h6></a>
-                            <a class="btn btn-info"><h6 class="text-white">B = Baik Sekali (86-95)</h6></a>
-                            <a class="btn btn-primary"><h6 class="text-white">C = Baik (71-85)</h6></a>
-                            <a class="btn btn-warning"><h6 class="text-white">D = Cukup (56-70)</h6></a>
-                            <a class="btn btn-danger"><h6 class="text-white">E = Kurang (41-55)</h6></a>
+                            <a class="btn btn-success ">
+                                <h6 class="text-white">A = Memuaskan (96-100)</h6>
+                            </a>
+                            <a class="btn btn-info">
+                                <h6 class="text-white">B = Baik Sekali (86-95)</h6>
+                            </a>
+                            <a class="btn btn-primary">
+                                <h6 class="text-white">C = Baik (71-85)</h6>
+                            </a>
+                            <a class="btn btn-warning">
+                                <h6 class="text-white">D = Cukup (56-70)</h6>
+                            </a>
+                            <a class="btn btn-danger">
+                                <h6 class="text-white">E = Kurang (41-55)</h6>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -26,6 +36,11 @@
                             <div class="form-group row">
                                 <div class="col-sm-12">
                                     <label for="pendaftar_id">Pilih Peserta PKL</label>
+                                    @if ($errors->has('pendaftar_id'))
+                                    <div class="alert alert-danger" role="alert" style="border-radius:10px!important">
+                                        Peserta sudah memiliki nilai
+                                    </div>
+                                    @endif
                                     <select class="select2 form-control custom-select" id="pendaftar_id" name="pendaftar_id">
                                         <option></option>
                                         <optgroup label="Peserta PKL">
@@ -54,7 +69,7 @@
                                 </div>
                                 <div class="col-sm-12 col-md-6">
                                     <label for="kemampuananalisa">Kemampuan Analisa</label>
-                                        <input id="kemampuananalisa" name="kemampuananalisa" type="number" class="required form-control">
+                                    <input id="kemampuananalisa" name="kemampuananalisa" type="number" class="required form-control">
                                 </div>
                             </div>
                             <div class="form-group row">

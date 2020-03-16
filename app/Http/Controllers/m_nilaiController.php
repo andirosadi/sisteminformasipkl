@@ -31,6 +31,9 @@ class   m_nilaiController extends Controller
      */
     public function create()
     {
+        $nilai = DB::table('nilais')
+            ->select('nilais.pendaftar_id')
+            ->get();
         $peserta = DB::table('pendaftars')
             ->join('status', 'pendaftars.status_id', '=', 'status.id')
             ->join('divisi', 'pendaftars.divisi_id', '=', 'divisi.id')
@@ -38,7 +41,7 @@ class   m_nilaiController extends Controller
             ->where(['divisi.id' => Auth::user()->divisi_id,
                 'status.id' => 1])
             ->get();
-        return view('mentor.c_nilai', compact('peserta')) ;
+        return view('mentor.c_nilai', compact('peserta', 'nilai')) ;
     }
 
 
@@ -51,6 +54,9 @@ class   m_nilaiController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+          'pendaftar_id' => 'unique:nilais'
+        ]);
         $nilai = new Nilai();
         $nilai->pendaftar_id = $request->pendaftar_id;
         $nilai->penulisanlaporan = $request->penulisanlaporan;
