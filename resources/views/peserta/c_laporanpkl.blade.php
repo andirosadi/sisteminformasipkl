@@ -22,7 +22,7 @@
                     <section>
                         <div class="form-group">
                             <label for="judul">Judul</label>
-                            <input id="judul" name="judul" type="text" class="required form-control">
+                            <input id="judul" name="judul" type="text" class="required form-control" value="{{old('judul')}}">
                         </div>
                         <div class="form-group">
                             <div class="alert alert-success" role="alert" style="border-radius:10px!important;">
