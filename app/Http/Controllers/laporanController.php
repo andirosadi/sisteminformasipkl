@@ -35,7 +35,7 @@ class laporanController extends Controller
         $userID = \auth('pendaftar')->user()->getAuthIdentifier();
         $this -> validate($request,[
             'judul' =>'nullable|max:100',
-            'laporan' =>'required|file|max:5000'
+            'laporan' =>'required|file|mimes:doc,docx,pdf|max:5000'
         ]);
         $uploadedFile = $request->file('laporan');
         $path = $uploadedFile->store('public/laporan_pkl');
@@ -44,7 +44,6 @@ class laporanController extends Controller
             'judul'=>$request->judul ?? $uploadedFile->getClientOriginalName(),
             'laporan'=> $path
         ]);
-
         return redirect('laporanpkl/index')->with('message','Laporan PKL berhasil di upload.');
     }
     public function edit($id)

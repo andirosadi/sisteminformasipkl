@@ -1,119 +1,48 @@
 @extends('peserta.pesertaLayout.peserta_design')
 @section('content')
-    <!-- ============================================================== -->
-    <!-- Bread crumb and right sidebar toggle -->
-    <!-- ============================================================== -->
-
-    <!-- ============================================================== -->
-    <!-- End Bread crumb and right sidebar toggle -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- Container fluid  -->
-    <!-- ============================================================== -->
-    <!-- <div class="container-fluid">
-      @if (session('message'))
-      <div class="alert alert-success">
-        {{ session('message') }}
-      </div>
-      @endif -->
-                <!-- ============================================================== -->
-                <!-- Start Page Content -->
-                <!-- ============================================================== -->
-                <link href="{{asset('matrix/assets/libs/jquery-steps/jquery.steps.css')}}" rel="stylesheet">
-                <link href="{{asset('matrix/assets/libs/jquery-steps/steps.css')}}" rel="stylesheet">
-                <!-- <link href="../../dist/css/style.min.css" rel="stylesheet"> -->
-                <div class="card shadow-sm" style="border-radius:.40rem!important;">
-                    <div class="card-body wizard-content">
-                        <h4 class="card-title">Buat Laporan PKL</h4>
-                        <h6 class="card-subtitle"></h6>
-                        <form action="{{route('laporanpkl.upload')}}" method="post" enctype="multipart/form-data">
-                            {{csrf_field()}}
-                            {{method_field('post')}}
-                            <div>
-                                <section>
-                                    <label for="judul">Judul</label>
-                                    <input id="judul" name="judul" type="text" class="required form-control">
-                                    <div class="card">
-                                            <div for="laporan" class="card-title">Laporan PKL
-                                            <P><input type="file" class="form-control-file" id="laporan" name="laporan" required></P>
-                                            </div>
-                                    </div>
-                                </section>
-                                <div class="card-body">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                </div>
+<div class="row">
+    @if (count($errors)>0)
+    <div class="alert alert-danger" role="alert" style="border-radius:10px!important;">
+        <h4 class="alert-heading mdi mdi-file-document">Kesalahan Laporan!</h4>
+        @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+    </div>
+    @endif
+</div>
+<div class="row">
+    <div class="card shadow-sm" style="border-radius:10px!important;">
+        <div class="card-body wizard-content">
+            <h4 class="card-title">Buat Laporan PKL</h4>
+            <h6 class="card-subtitle"></h6>
+            <form action="{{route('laporanpkl.upload')}}" method="post" enctype="multipart/form-data">
+                {{csrf_field()}}
+                {{method_field('post')}}
+                <div>
+                    <section>
+                        <div class="form-group">
+                            <label for="judul">Judul</label>
+                            <input id="judul" name="judul" type="text" class="required form-control">
+                        </div>
+                        <div class="form-group">
+                            <div class="alert alert-success" role="alert" style="border-radius:10px!important;">
+                                <h4 class="alert-heading mdi mdi-file-document">Ketentuan File!</h4>
+                                <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
                             </div>
-                        </form>
+                        </div>
+                        <div class="form-group">
+                            <div for="laporan" class="card-title">Laporan PKL
+                                <P><input type="file" class="form-control-file" id="laporan" name="laporan" required></P>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </div>
-                <!-- ============================================================== -->
-                <!-- End PAge Content -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Right sidebar -->
-                <!-- ============================================================== -->
-                <!-- .right-sidebar -->
-                <!-- ============================================================== -->
-                <!-- End Right sidebar -->
-                <!-- ============================================================== -->
-
-    <!-- ============================================================== -->
-    <!-- End Container fluid  -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- footer -->
-    <!-- ============================================================== -->
-    <!-- All Jquery -->
-    <!-- ============================================================== -->
-    <script src="{{asset('matrix/assets/libs/quill/dist/quill.min.js')}}"></script>
-    <script src="{{asset('matrix/assets/libs/jquery/dist/jquery.min.js')}}"></script>
-    <!-- Bootstrap tether Core JavaScript -->
-    <script src="{{asset('matrix/assets/libs/popper.js/dist/umd/popper.min.js')}}"></script>
-    <script src="{{asset('matrix/assets/libs/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-    <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="{{asset('matrix/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js')}}"></script>
-    <script src="{{asset('matrix/assets/extra-libs/sparkline/sparkline.js')}}"></script>
-    <!--Wave Effects -->
-    <script src="{{asset('matrix/dist/js/waves.js')}}"></script>
-    <!--Menu sidebar -->
-    <script src="{{asset('matrix/dist/js/sidebarmenu.js')}}"></script>
-    <!--Custom JavaScript -->
-    <script src="{{asset('matrix/dist/js/custom.min.js')}}"></script>
-    <!-- this page js -->
-    <script src="{{asset('matrix/assets/libs/jquery-steps/build/jquery.steps.min.js')}}"></script>
-    <script src="{{asset('matrix/assets/libs/jquery-validation/dist/jquery.validate.min.js')}}"></script>
-    <!-- <script>
-        // Basic Example with form
-    // var form = $("#example-form");
-    // form.validate({
-    //     errorPlacement: function errorPlacement(error, element) { element.before(error); },
-    //     rules: {
-    //         confirm: {
-    //             equalTo: "#password"
-    //         }
-    //     }
-    // });
-    //  form.children("div").steps({
-    //     headerTag: "h3",
-    //     bodyTag: "section",
-    //     transitionEffect: "slideLeft",
-    //     onStepChanging: function(event, currentIndex, newIndex) {
-    //         form.validate().settings.ignore = ":disabled,:hidden";
-    //         return form.valid();
-    //     },
-    //     onFinishing: function(event, currentIndex) {
-    //         form.validate().settings.ignore = ":disabled";
-    //         return form.valid();
-    //     },
-    //     onFinished: function(event, currentIndex) {
-    //         alert("Submitted!");
-    //     }
-    // });
-    // </script> -->
-        <!-- END TEMPLATE -->
-    <!-- END SCRIPTS -->
-    <!-- ============================================================== -->
-    <!-- End footer -->
-    <!-- ============================================================== -->
+            </form>
+        </div>
+    </div>
+</div>
 
 @endsection
