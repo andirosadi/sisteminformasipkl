@@ -46,6 +46,10 @@ class a_kuotaController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'jumlahkuota' => ['required'],
+            'divisi_id' => ['unique:users'],
+        ]);
         $kuota = new Kuota();
         $kuota->jumlahkuota = $request->jumlahkuota;
         $kuota->divisi_id = $request->divisi_id;
