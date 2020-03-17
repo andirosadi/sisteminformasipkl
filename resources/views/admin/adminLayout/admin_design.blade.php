@@ -25,7 +25,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('matrix/assets/libs/quill/dist/quill.snow.css')}}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function(){
+        $(document).ready(function() {
             $("#myInput").on("keyup", function() {
                 var value = $(this).val().toLowerCase();
                 $("#myTable tr").filter(function() {
@@ -34,7 +34,6 @@
             });
         });
     </script>
-
     <link rel="stylesheet" href="{{asset('matrix/assets/libs/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css')}}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js" type="text/javascript"></script>
@@ -47,16 +46,16 @@
 <![endif]-->
 </head>
 
-<body >
-  <div class="preloader">
-      <div class="lds-ripple">
-          <div class="lds-pos"></div>
-          <div class="lds-pos"></div>
-      </div>
-  </div>
-  <!-- ============================================================== -->
-  <!-- Main wrapper - style you can find in pages.scss -->
-  <div id="main-wrapper" style="font-family: 'Product Sans'">
+<body>
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <div id="main-wrapper" style="font-family: 'Product Sans'">
         <!-- ============================================================== -->
         <!-- Topbar header - style you can find in pages.scss -->
         <!-- ============================================================== -->
@@ -74,14 +73,14 @@
         <!-- ============================================================== -->
         <!-- Page wrapper  -->
         <div class="page-wrapper">
-          <div class="page-breadcrumb">
-             <div class="row">
-             </div>
-         </div>
-        <div class="container-fluid">
-        @yield('content')
-        </div>
-        @include('admin.adminLayout.admin_footer')
+            <div class="page-breadcrumb">
+                <div class="row">
+                </div>
+            </div>
+            <div class="container-fluid">
+                @yield('content')
+            </div>
+            @include('admin.adminLayout.admin_footer')
         </div>
         <!-- ============================================================== -->
         <!-- End Page wrapper  -->
@@ -107,14 +106,14 @@
     <!--Custom JavaScript -->
     <script src="{{asset('matrix/dist/js/custom.min.js')}}"></script>
     <!--This page JavaScript -->
-  <script >
-      $('#exampleModalCenter3').on('show.bs.modal', function (event) {
-          var button = $(event.relatedTarget)
-          var id = button.data('eventid')
-          var modal = $(this)
-          modal.find('.modal-body #eventid').val(id)
-      })
-  </script>
+    <script>
+        $('#exampleModalCenter3').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget)
+            var id = button.data('eventid')
+            var modal = $(this)
+            modal.find('.modal-body #eventid').val(id)
+        })
+    </script>
     <!-- <script src="../../dist/js/pages/dashboards/dashboard1.js"></script> -->
     <!-- Charts js Files -->
     <script src="{{asset('matrix/assets/libs/flot/excanvas.js')}}"></script>
@@ -131,10 +130,10 @@
     <script src="{{asset('matrix/assets/extra-libs/multicheck/jquery.multicheck.js')}}"></script>
     <script src="{{asset('matrix/assets/extra-libs/DataTables/datatables.min.js')}}"></script>
     <script>
-    /****************************************
-     *       Basic Table                   *
-     ****************************************/
-    $('#zero_config').DataTable();
+        /****************************************
+         *       Basic Table                   *
+         ****************************************/
+        $('#zero_config').DataTable();
     </script>
 
     <!-- Forms -->
@@ -148,59 +147,17 @@
     <script src="{{asset('matrix/assets/libs/jquery-minicolors/jquery.minicolors.min.js')}}"></script>
     <script src="{{asset('matrix/assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
     <script src="{{asset('matrix/assets/libs/quill/dist/quill.min.js')}}"></script>
-  <script >
-      function validasiEkstensi(){
-          var inputFile = document.getElementById('laporananggaran');
-          var pathFile = inputFile.value;
-          var ekstensiOk = /(\.pdf|\.doc|\.docx|\.xls|\.xlsx)$/i;
-          if(!ekstensiOk.exec(pathFile)){
-              alert('Silakan upload file yang memiliki ekstensi .jpeg/.jpg/.png/.gif');
-              inputFile.value = '';
-              return false;
-          }else{
-              return true;
-              // Preview gambar
-              // /*if (inputFile.files && inputFile.files[0]) {
-              //     var reader = new FileReader();
-              //     reader.onload = function(e) {
-              //         document.getElementById('preview').innerHTML = '<img src="'+e.target.result+'" style="height:300px"/>';
-              //     };
-              //     reader.readAsDataURL(inputFile.files[0]);*/
-              // }
-          }
-      }
-  </script>
-  <script src="{{asset('matrix/assets/libs/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js')}}"></script>
-  <script >
-      $(function () {
-          $('#datetimepicker-autoclose').datetimepicker({
-              useCurrent:true,
-              collapse:true,
-              format: 'YYYY/MM/DD HH:mm'
-          });
-      });
-  </script>
-    <!-- START SCRIPTS table-->
-        <!-- START PLUGINS -->
-{{--        <script type="text/javascript" src="{{asset('joli/js/plugins/jquery/jquery.min.js')}}"></script>--}}
-{{--        <script type="text/javascript" src="{{asset('joli/js/plugins/jquery/jquery-ui.min.js')}}"></script>--}}
-{{--        <script type="text/javascript" src="{{asset('joli/js/plugins/bootstrap/bootstrap.min.js')}}"></script>--}}
-{{--        <!-- END PLUGINS -->--}}
 
-{{--        <!-- START THIS PAGE PLUGINS-->--}}
-{{--        <script type="text/javascript" src="{{asset('joli/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js')}}"></script>--}}
-
-{{--        <script type="text/javascript" src="{{asset('joli/js/demo_tables.js')}}"></script>--}}
-{{--        <!-- END THIS PAGE PLUGINS-->--}}
-
-{{--        <!-- START TEMPLATE -->--}}
-
-{{--        <script type="text/javascript" src="{{asset('joli/js/plugins.js')}}"></script>--}}
-{{--        <script type="text/javascript" src="{{asset('joli/js/actions.js')}}"></script>--}}
-        <!-- END TEMPLATE -->
-    <!-- END SCRIPTS -->
-
-
+    <script src="{{asset('matrix/assets/libs/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js')}}"></script>
+    <script>
+        $(function() {
+            $('#datetimepicker-autoclose').datetimepicker({
+                useCurrent: true,
+                collapse: true,
+                format: 'YYYY/MM/DD HH:mm'
+            });
+        });
+    </script>
 </body>
 
 </html>
