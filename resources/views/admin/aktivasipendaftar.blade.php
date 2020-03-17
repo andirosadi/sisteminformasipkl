@@ -16,12 +16,12 @@
                 @elseif($humascount > $kuota_humas->jumlahkuota / 2 && $humascount < $kuota_humas->jumlahkuota)
                     <div class="box bg-warning text-center" style="border-radius:10px!important">
                         <h6 class="text-white">{{$kuota_humas->namadivisi}}</h6><hr>
-                        <h6 class="text-white">{{$kuota_humas->jumlahkuota}}/{{$humascount}}</h6>
+                        <h6 class="text-white">{{$humascount}}/{{$kuota_humas->jumlahkuota}}</h6>
                     </div>
                 @elseif($humascount <= $kuota_humas->jumlahkuota / 2)
                     <div class="box bg-success text-center" style="border-radius:10px!important">
                         <h6 class="text-white">{{$kuota_humas->namadivisi}}</h6><hr>
-                        <h6 class="text-white">{{$kuota_humas->jumlahkuota}}/{{$humascount}}</h6>
+                        <h6 class="text-white">{{$humascount}}/{{$kuota_humas->jumlahkuota}}</h6>
                     </div>
                 @endif
             @endforeach
@@ -39,12 +39,12 @@
                 @elseif($siscount > $kuota_sis->jumlahkuota / 2 && $siscount < $kuota_sis->jumlahkuota)
                     <div class="box bg-warning text-center" style="border-radius:10px!important">
                         <h6 class="text-white">{{$kuota_sis->namadivisi}}</h6><hr>
-                        <h6 class="text-white">{{$kuota_sis->jumlahkuota}}/{{$siscount}}</h6>
+                        <h6 class="text-white">{{$siscount}}/{{$kuota_sis->jumlahkuota}}</h6>
                     </div>
                 @elseif($siscount <= $kuota_sis->jumlahkuota / 2)
                     <div class="box bg-success text-center" style="border-radius:10px!important">
                         <h6 class="text-white">{{$kuota_sis->namadivisi}}</h6><hr>
-                        <h6 class="text-white">{{$kuota_sis->jumlahkuota}}/{{$siscount}}</h6>
+                        <h6 class="text-white">{{$siscount}}/{{$kuota_sis->jumlahkuota}}</h6>
                     </div>
                 @endif
             @endforeach
@@ -62,12 +62,12 @@
                 @elseif($keuangancount > $kuota_keuangan->jumlahkuota / 2 && $keuangancount < $kuota_keuangan->jumlahkuota)
                     <div class="box bg-warning text-center" style="border-radius:10px!important">
                         <h6 class="text-white">{{$kuota_keuangan->namadivisi}}</h6><hr>
-                        <h6 class="text-white">{{$kuota_keuangan->jumlahkuota}}/{{$keuangancount}}</h6>
+                        <h6 class="text-white">{{$keuangancount}}/{{$kuota_keuangan->jumlahkuota}}</h6>
                     </div>
                 @elseif($keuangancount <= $kuota_sis->jumlahkuota / 2)
                     <div class="box bg-success text-center" style="border-radius:10px!important">
                         <h6 class="text-white">{{$kuota_keuangan->namadivisi}}</h6><hr>
-                        <h6 class="text-white">{{$kuota_keuangan->jumlahkuota}}/{{$keuangancount}}</h6>
+                        <h6 class="text-white">{{$keuangancount}}/{{$kuota_keuangan->jumlahkuota}}</h6>
                     </div>
                 @endif
             @endforeach
@@ -85,12 +85,12 @@
                 @elseif($mou1count > $kuota_mou1->jumlahkuota / 2 && $mou1count < $kuota_mou1->jumlahkuota)
                     <div class="box bg-warning text-center" style="border-radius:10px!important">
                         <h6 class="text-white">{{$kuota_mou1->namadivisi}}</h6><hr>
-                        <h6 class="text-white">{{$kuota_mou1->jumlahkuota}}/{{$mou1count}}</h6>
+                        <h6 class="text-white">{{$mou1count}}/{{$kuota_mou1->jumlahkuota}}</h6>
                     </div>
                 @elseif($mou1count <= $kuota_mou1->jumlahkuota / 2)
                     <div class="box bg-success text-center" style="border-radius:10px!important">
                         <h6 class="text-white">{{$kuota_mou1->namadivisi}}</h6><hr>
-                        <h6 class="text-white">{{$kuota_mou1->jumlahkuota}}/{{$mou1count}}</h6>
+                        <h6 class="text-white">{{$mou1count}}/{{$kuota_mou1->jumlahkuota}}</h6>
                     </div>
                 @endif
             @endforeach
@@ -108,12 +108,12 @@
                 @elseif($mou5count > $kuota_mou5->jumlahkuota / 2 && $mou5count < $kuota_mou5->jumlahkuota)
                     <div class="box bg-warning text-center" style="border-radius:10px!important">
                         <h6 class="text-white">{{$kuota_mou5->namadivisi}}</h6><hr>
-                        <h6 class="text-white">{{$kuota_mou5->jumlahkuota}}/{{$mou5count}}</h6>
+                        <h6 class="text-white">{{$mou5count}}/{{$kuota_mou5->jumlahkuota}}</h6>
                     </div>
                 @elseif($mou5count <= $kuota_mou5->jumlahkuota / 2)
                     <div class="box bg-success text-center" style="border-radius:10px!important">
                         <h6 class="text-white">{{$kuota_mou5->namadivisi}}</h6><hr>
-                        <h6 class="text-white">{{$kuota_mou5->jumlahkuota}}/{{$mou5count}}</h6>
+                        <h6 class="text-white">{{$mou5count}}/{{$kuota_mou5->jumlahkuota}}</h6>
                     </div>
                 @endif
             @endforeach
@@ -131,12 +131,12 @@
                 @elseif($mpu1count > $kuota_mpu1->jumlahkuota / 2 && $mpu1count < $kuota_mpu1->jumlahkuota)
                     <div class="box bg-warning text-center" style="border-radius:10px!important">
                         <h6 class="text-white">{{$kuota_mpu1->namadivisi}}</h6><hr>
-                        <h6 class="text-white">{{$kuota_mpu1->jumlahkuota}}/{{$mpu1count}}</h6>
+                        <h6 class="text-white">{{$mpu1count}}/{{$kuota_mpu1->jumlahkuota}}</h6>
                     </div>
                 @elseif($mpu1count <= $kuota_mpu1->jumlahkuota / 2)
                     <div class="box bg-success text-center" style="border-radius:10px!important">
                         <h6 class="text-white">{{$kuota_mpu1->namadivisi}}</h6><hr>
-                        <h6 class="text-white">{{$kuota_mpu1->jumlahkuota}}/{{$mpu1count}}</h6>
+                        <h6 class="text-white">{{$mpu1count}}/{{$kuota_mpu1->jumlahkuota}}</h6>
                     </div>
                 @endif
             @endforeach
@@ -154,12 +154,12 @@
                 @elseif($mpu5count > $kuota_mpu5->jumlahkuota / 2 && $mpu5count < $kuota_mpu5->jumlahkuota)
                     <div class="box bg-warning text-center" style="border-radius:10px!important">
                         <h6 class="text-white">{{$kuota_mpu5->namadivisi}}</h6><hr>
-                        <h6 class="text-white">{{$kuota_mpu5->jumlahkuota}}/{{$mpu5count}}</h6>
+                        <h6 class="text-white">{{$mpu5count}}/{{$kuota_mpu5->jumlahkuota}}</h6>
                     </div>
                 @elseif($mpu5count <= $kuota_mpu5->jumlahkuota / 2)
                     <div class="box bg-success text-center" style="border-radius:10px!important">
                         <h6 class="text-white">{{$kuota_mpu5->namadivisi}}</h6><hr>
-                        <h6 class="text-white">{{$kuota_mpu5->jumlahkuota}}/{{$mpu5count}}</h6>
+                        <h6 class="text-white">{{$mpu5count}}/{{$kuota_mpu5->jumlahkuota}}</h6>
                     </div>
                 @endif
             @endforeach
