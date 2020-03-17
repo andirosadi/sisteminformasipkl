@@ -92,6 +92,7 @@
                                 </div>
                             </div>
                         </section>
+                        <hr>
                         <div class="row">
                             <div class="col-sm-12" align="right">
                                 <button type="submit" class="btn btn-primary">Submit</button>
