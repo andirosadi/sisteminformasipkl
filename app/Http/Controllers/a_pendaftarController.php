@@ -168,14 +168,17 @@ class a_pendaftarController extends Controller
             ->where(['pendaftars.divisi_id' => 7,
                 'status.id' => 1])
             ->count();
+        $coba = DB::table('kuotas')
+          ->join('divisi', 'kuotas.divisi_id', '=', 'divisi.id')
+          ->select('kuotas.*', 'divisi.namadivisi')
+          ->get();
         $divisi = DB::table('divisi')
             ->select('divisi.*')
             ->get();
         $pendaftar = Pendaftar::findOrFail($id);
         return view('admin.aktivasipendaftar',
-            compact('pendaftar', 'divisi', 'kuotahumas', 'humascount','kuotasis','siscount','kuotakeuangan','keuangancount','kuotamou1','mou1count','kuotamou5','mou5count','kuotampu1','mpu1count','kuotampu5','mpu5count'));
+            compact('coba', 'pendaftar', 'divisi', 'kuotahumas', 'humascount','kuotasis','siscount','kuotakeuangan','keuangancount','kuotamou1','mou1count','kuotamou5','mou5count','kuotampu1','mpu1count','kuotampu5','mpu5count'));
     }
-
     /**
      * Update the specified resource in storage.
      *

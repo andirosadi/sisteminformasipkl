@@ -233,4 +233,16 @@
         </div>
     </div>
 </div>
+<div class="row">
+  @foreach($coba as $semuakuota)
+  <div class="col-md-6 col-lg-3 col-xlg-3" >
+      <div class="card card-hover" style="background-color: transparent">
+                  <div class="box bg-danger text-center" style="border-radius:10px!important">
+                      <h6 class="text-white">{{$semuakuota->namadivisi}}</h6><hr>
+                      <h6 class="text-white">{{$semuakuota->jumlahkuota}}</h6>
+                  </div>
+      </div>
+  </div>
+  @endforeach
+</div>
 @endsection
