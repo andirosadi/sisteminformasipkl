@@ -19,64 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55b344e1-958d-4246-8bfe-d439bb21d54a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/commandlinetools/Tool_based_on_Symfony_Console_6_6_20__6_16_PM_artisan.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/commandlinetools/schemas/frameworkDescriptionVersion1.1.4.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php-test-framework.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Notifications/NotificationContract.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Notifications/UserNotifyQuery.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/notifikasi.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/notifikasi.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/notifikasi.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sisteminformasipkl.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sisteminformasipkl.iml" afterDir="false" />
+    <list default="true" id="55b344e1-958d-4246-8bfe-d439bb21d54a" name="Default Changelist" comment="add notification feature">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Anggaran.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Anggaran.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Divisi.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Divisi.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Event.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Event.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/PesertaLoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/PesertaLoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/a_kuotaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/a_kuotaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/k_anggaranController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/k_anggaranController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/logbookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/logbookController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/m_kuotaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/m_kuotaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/m_logbookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/m_logbookController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/uploadAnggaranController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/uploadAnggaranController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Kuota.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Kuota.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Laporanpkl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Laporanpkl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Logbook.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Logbook.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Nilai.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Nilai.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Pendaftar.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Pendaftar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Role.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Statuskuota.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Statuskuota.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootstrap/cache/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/ExampleComponent.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/adminLayout/admin_design.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/adminLayout/admin_design.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/adminLayout/admin_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/adminLayout/admin_header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/aktivasipendaftar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/aktivasipendaftar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/keuangan/keuanganLayout/keuangan_design.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/keuangan/keuanganLayout/keuangan_design.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/keuangan/keuanganLayout/keuangan_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/keuangan/keuanganLayout/keuangan_header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/mentor/mentorLayout/mentor_design.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mentor/mentorLayout/mentor_design.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/mentor/mentorLayout/mentor_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mentor/mentorLayout/mentor_header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/peserta/pesertaLayout/peserta_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/peserta/pesertaLayout/peserta_header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ExampleTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/ExampleTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +161,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="addDependency /home/imandidik/Desktop/valet/pkl" value="--dev" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/phpunit.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../jsdev/isea-next" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -389,6 +333,14 @@
       <workItem from="1584094700882" duration="220000" />
       <workItem from="1584095080470" duration="701000" />
     </task>
+    <task id="LOCAL-00001" summary="add notification feature">
+      <created>1591541042298</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1591541042298</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -406,7 +358,15 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add notification feature" />
+    <option name="LAST_COMMIT_MESSAGE" value="add notification feature" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="2747" y="374" width="256" height="337" key="#Notifications" timestamp="1591541163758">
+      <screen x="1920" y="27" width="1920" height="1018" />
+    </state>
+    <state x="2747" y="374" width="256" height="337" key="#Notifications/1920.27.1920.1018/0.0.1920.1080@1920.27.1920.1018" timestamp="1591541163758" />
     <state x="2484" y="101" width="796" height="875" key="#NotifikasiNo1.testNotifikasiKoutaPKL" timestamp="1591444112319">
       <screen x="1920" y="27" width="1920" height="1017" />
     </state>
@@ -436,10 +396,11 @@
       <screen x="1920" y="27" width="1920" height="1017" />
     </state>
     <state x="2684" y="448" width="381" height="182" key="ComposerInitDialogKey/1920.27.1920.1017/0.0.1920.1080@1920.27.1920.1017" timestamp="1591442191989" />
-    <state x="2658" y="285" width="424" height="520" key="FileChooserDialogImpl" timestamp="1591448381677">
-      <screen x="1920" y="27" width="1920" height="1017" />
+    <state x="2658" y="285" width="424" height="520" key="FileChooserDialogImpl" timestamp="1591541291672">
+      <screen x="1920" y="27" width="1920" height="1018" />
     </state>
     <state x="2658" y="285" width="424" height="520" key="FileChooserDialogImpl/1920.27.1920.1017/0.0.1920.1080@1920.27.1920.1017" timestamp="1591448381677" />
+    <state x="2658" y="285" key="FileChooserDialogImpl/1920.27.1920.1018/0.0.1920.1080@1920.27.1920.1018" timestamp="1591541291672" />
     <state width="1897" height="411" key="GridCell.Tab.0.bottom" timestamp="1591533165069">
       <screen x="0" y="27" width="1920" height="1017" />
     </state>
@@ -477,6 +438,10 @@
       <screen x="1920" y="27" width="1920" height="1017" />
     </state>
     <state x="2621" y="392" width="508" height="299" key="SymfonyComponentCompositeDataDialog/1920.27.1920.1017/0.0.1920.1080@1920.27.1920.1017" timestamp="1591442173135" />
+    <state x="2475" y="268" width="800" height="543" key="Vcs.Push.Dialog.v2" timestamp="1591541140316">
+      <screen x="1920" y="27" width="1920" height="1018" />
+    </state>
+    <state x="2475" y="268" width="800" height="543" key="Vcs.Push.Dialog.v2/1920.27.1920.1018/0.0.1920.1080@1920.27.1920.1018" timestamp="1591541140316" />
     <state x="2649" y="448" width="461" height="181" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591467291358">
       <screen x="1920" y="27" width="1920" height="1017" />
     </state>
