@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Notifications\Admin\NotifikasiKouta;
 use Illuminate\Http\Request;
 use App\User;
 use App\Divisi;
@@ -28,38 +29,6 @@ class m_kuotaController extends Controller
             ->where('divisi.id','=', Auth::user()->divisi_id)
             ->get();
         return view('mentor.kuota',['admin'=>$admin]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**
@@ -91,7 +60,15 @@ class m_kuotaController extends Controller
         $kuota->jumlahkuota = $request->jumlahkuota;
         $kuota->statuskuota_id = $request->statuskuota_id;
         $kuota->update();
-        return redirect('m_kuota')->with('message', 'Kuota berhasil di update');
+	    /**
+	     * @var $causer User
+	     */
+        $causer = \auth()->user();
+        
+        $notifikasi = new NotifikasiKouta($causer, $kuota);
+        $notifikasi->notify();
+        
+        return redirect('m_kuota',201)->with('message', 'Kuota berhasil di update');
     }
 
     /**

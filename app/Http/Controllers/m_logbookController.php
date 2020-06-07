@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Logbook;
+use App\Notifications\Pendaftar\NotifikasiLogBook;
+use App\User;
 use Illuminate\Http\Request;
 use DB;
 
@@ -83,6 +85,15 @@ class m_logbookController extends Controller
         ]);
         $logbook->status = $request->status;
         $logbook->update();
+	
+	    /**
+	     * @var User $mentor
+	     */
+        $mentor = auth()->user();
+        $logbook->refresh();
+        $notifikasi = new NotifikasiLogBook($mentor, $logbook);
+        $notifikasi->notify();
+        
         return redirect('m_logbook/'.$peserta)->with('message','Logbook berhasil di update');
     }
 

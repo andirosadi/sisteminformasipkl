@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Logbook;
+use App\Notifications\Mentor\NotifikasiPengajuanLogBook;
+use App\Pendaftar;
 use Illuminate\Http\Request;
 use DB;
 use Auth;
@@ -49,6 +51,14 @@ class logbookController extends Controller
         $logbook->tanggal = $request->tanggal;
         $logbook->uraian = $request->uraian;
         $logbook->save();
+	    /**
+	     * @var Pendaftar $peserta
+	     */
+        $peserta = Pendaftar::find($userID);
+        
+        $notifikasi = new NotifikasiPengajuanLogBook($peserta, $logbook);
+        $notifikasi->notify();
+        
         return redirect()->route('logbook.index')->with('message', 'Logbook berhasil ditambah');
     }
 

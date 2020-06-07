@@ -81,3 +81,9 @@ Route::post('peserta-register', 'Auth\PesertaLoginController@register')->name('p
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home-peserta', 'pesertaHomeController@index')->name('home.peserta');
+
+
+/**
+ * Proses membuat notifikasi mark as read & index
+ */
+Route::resource('notification','NotificationController')->only(['index','update']);

@@ -64,7 +64,7 @@
                         <h6 class="text-white">{{$kuota_keuangan->namadivisi}}</h6><hr>
                         <h6 class="text-white">{{$keuangancount}}/{{$kuota_keuangan->jumlahkuota}}</h6>
                     </div>
-                @elseif($keuangancount <= $kuota_sis->jumlahkuota / 2)
+                @elseif( isset($kuota_sis) && $keuangancount <= $kuota_sis->jumlahkuota / 2)
                     <div class="box bg-success text-center" style="border-radius:10px!important">
                         <h6 class="text-white">{{$kuota_keuangan->namadivisi}}</h6><hr>
                         <h6 class="text-white">{{$keuangancount}}/{{$kuota_keuangan->jumlahkuota}}</h6>

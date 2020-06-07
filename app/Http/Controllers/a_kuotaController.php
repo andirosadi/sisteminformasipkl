@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Kuota;
+use App\Notifications\Mentor\NotifikasiPengajuanKuota;
 use Illuminate\Http\Request;
 use App\User;
 use App\Divisi;
@@ -48,12 +49,20 @@ class a_kuotaController extends Controller
     {
         $request->validate([
             'jumlahkuota' => ['required'],
-            'divisi_id' => ['unique:users'],
+            'divisi_id' => ['unique:kuotas'],
         ]);
         $kuota = new Kuota();
         $kuota->jumlahkuota = $request->jumlahkuota;
         $kuota->divisi_id = $request->divisi_id;
         $kuota->save();
+	    /**
+	     * @var $user User
+	     */
+        $user = \auth()->user();
+        
+        $notifikasi = new NotifikasiPengajuanKuota($user, $kuota);
+        $notifikasi->notify();
+        
         return redirect()->route('a_kuota.index')->with('message', 'Kuota berhasil diajukan!');
     }
 

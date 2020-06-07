@@ -56,7 +56,7 @@
                 <!-- User profile and search -->
                 <!-- ============================================================== -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{asset('matrix/assets/images/notification.png')}}" alt="notification" class="rounded-circle" width="31"></a>
+                    <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" id="notification-icon"><img src="{{asset('matrix/assets/images/notification.png')}}" alt="notification" class="rounded-circle" width="31"></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{asset('matrix/assets/images/users/1.jpg')}}" alt="user" class="rounded-circle" width="31"></a>
@@ -77,3 +77,5 @@
         </div>
     </nav>
 </header>
+<div id="notification-container"></div>
+<script src="{{asset('js/notifikasi.js')}}"></script>

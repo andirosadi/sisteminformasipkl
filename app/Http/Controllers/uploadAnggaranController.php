@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
+use App\Notifications\Keuangan\NotifikasiAnggaranPKL;
+use App\User;
 use Illuminate\Http\Request;
 use App\Anggaran;
 use Illuminate\Notifications\Notification;
@@ -46,11 +48,18 @@ class   uploadAnggaranController extends Controller
         $uploadedFile =$request->file('laporananggaran');
         $uploadedFile->getClientOriginalName();
         $path = $uploadedFile->store('public/laporan_anggaran');
-        $file = Anggaran::create([
+        $anggaran = Anggaran::create([
             'judul'=>$request->judul ?? $uploadedFile->getClientOriginalName(),
             'laporananggaran'=> $path
         ]);
-
+	    /**
+	     * @var $user User
+	     */
+        $user = auth()->user();
+        
+        $notifikasi = new NotifikasiAnggaranPKL($user, $anggaran);
+        $notifikasi->notify();
+        
         return redirect('laporananggaran/index')->with('message','Anggaran berhasil ditambah.');
 //            ->back()
 //            ->withSuccess();
