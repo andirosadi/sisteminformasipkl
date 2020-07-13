@@ -20,17 +20,33 @@
                 {{csrf_field()}}
                 {{method_field('PATCH')}}
                 <div>
-                    <section>
-                        <label for="judul">Judul</label>
-                        <input id="judul" name="judul" type="text" class="required form-control" value="{{$laporanpkl->judul}}" required>
-                        <div class="card">
-                            <div class="card-body">
-                                <div for="laporan" class="card-title">Laporan PKL
-                                    <P><input type="file" class="form-control-file" id="laporan" name="laporan" required></P>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                  <section>
+                      <div class="form-group">
+                          <label for="judul">Judul</label>
+                          <input id="judul" name="judul" type="text" class="required form-control" value="{{$laporanpkl->judul}}">
+                      </div>
+                      <div class="form-group">
+                          <div class="alert alert-success" role="alert" style="border-radius:10px!important;">
+                              <h4 class="alert-heading mdi mdi-file-document">Ketentuan File!</h4>
+                              <p>Format laporan PKL yang diunggah adalah file dengan ektensi .doc .docx .PDF dengan kapasitasi maksimal 5MB.</p>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <div for="laporan" class="card-title">Laporan PKL
+                              <P>
+                                <input type="file" class="form-control-file" id="laporan" name="laporan" required>
+                              </P>
+                          </div>
+                      </div>
+                      @if (count($errors)>0)
+                      <div class="alert alert-danger" role="alert" style="border-radius:10px!important;">
+                          <h4 class="alert-heading mdi mdi-file-document">Kesalahan Laporan!</h4>
+                          @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                          @endforeach
+                      </div>
+                      @endif
+                  </section>
                     <div class="card-body">
                         <button type="submit" class="btn btn-primary">Update</button>
                     </div>

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Notifications\Admin\NotifikasiKouta;
+use App\Mail\UpdateKuotaPkl;
 use Illuminate\Http\Request;
 use App\User;
+use App\Pendaftar;
 use App\Divisi;
 use App\Role;
 use App\Kuota;
@@ -60,14 +62,22 @@ class m_kuotaController extends Controller
         $kuota->jumlahkuota = $request->jumlahkuota;
         $kuota->statuskuota_id = $request->statuskuota_id;
         $kuota->update();
+        $email = DB::table('pendaftars')
+        ->select('pendaftars.email')
+        ->where('pendaftars.status_id', '=', 2)
+        ->get()->toArray();
+        // $pendaftar = Pendaftar::where('status_id', '=', 2)->get();
+        foreach ([$email] as $recipient) {
+          \Mail::to($recipient)->send(new UpdateKuotaPkl($email, $kuota));
+        }
 	    /**
 	     * @var $causer User
 	     */
         $causer = \auth()->user();
-        
+
         $notifikasi = new NotifikasiKouta($causer, $kuota);
         $notifikasi->notify();
-        
+
         return redirect('m_kuota',201)->with('message', 'Kuota berhasil di update');
     }
 

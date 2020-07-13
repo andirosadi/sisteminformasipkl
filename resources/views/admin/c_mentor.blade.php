@@ -37,7 +37,7 @@
                             <div class="form-group row">
                                 <div class="col-sm-12 col-md-6">
                                     <label for="name">Nama</label>
-                                    <input id="name" name="name" type="text" class="required form-control" value="{{old('name')}}">
+                                    <input id="name" name="name" type="text" onkeypress="return event.charCode < 48 || event.charCode >57" class="required form-control" value="{{old('name')}}">
                                 </div>
                                 <div class="col-sm-12 col-md-6">
                                     <label for="nip">NIP</label>

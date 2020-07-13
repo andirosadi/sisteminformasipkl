@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Nilai;
 use App\Pendaftar;
+use App\Mail\NilaiPkl;
 use Illuminate\Http\Request;
 use App\User;
 use App\Divisi;
@@ -72,7 +73,12 @@ class   m_nilaiController extends Controller
         $nilai->kepemimpinan = $request->kepemimpinan;
         $nilai->potensi = $request->potensi;
         $nilai->save();
+        $pendaftar = DB::table('pendaftars')
+        ->select('pendaftars.*')
+        ->where('pendaftars.id', '=', $nilai->pendaftar_id)->first();
+        \Mail::to($pendaftar->email)->send(new NilaiPkl($pendaftar));
         return redirect('m_nilai/'.$nilai->pendaftar_id)->with('message', 'Nilai berhasil di tambah');
+
     }
 
     /**

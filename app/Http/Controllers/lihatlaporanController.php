@@ -84,7 +84,7 @@ class lihatlaporanController extends Controller
         $laporanpkl = Laporanpkl::findOrFail($id);
         $this->validate($request,[
             'judul' =>'nullable|max:100',
-            'laporan' =>'required|file|max:5000'
+            'laporan' =>'required|file|mimes:doc,docx,pdf|max:5000'
         ]);
         $laporan = $request->file('laporan');
         $laporan->getClientOriginalName();

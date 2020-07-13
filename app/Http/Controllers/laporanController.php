@@ -54,6 +54,10 @@ class laporanController extends Controller
 
     public function update(Request $request, $id)
     {
+      $this -> validate($request,[
+          'judul' =>'nullable|max:100',
+          'laporan' =>'required|file|mimes:doc,docx,pdf|max:5000'
+      ]);
         $laporanpkl = Laporanpkl::findOrFail($id);
         $uploadedFile =$request->file('laporan');
         $path = $uploadedFile->store('public/laporan_pkl');

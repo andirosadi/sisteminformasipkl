@@ -41,7 +41,15 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <div for="laporananggaran" class="card-title">Anggaran PKL
-                                            <P><input type="file" onchange="return validasiEktensi()" data-toggle="tooltip" title="Unggah file dengan ektensi PDF, xls atau xlsx. Kapasitas maksimal file yang diupload adalah 5MB" class="form-control-file" id="laporananggaran" name="laporananggaran"></P>
+                                            <P>
+                                              <input type="file"class="form-control {{ $errors->has('laporananggaran') ? ' is-invalid' : '' }}"  data-toggle="tooltip" title="Unggah file dengan ektensi PDF, xls atau xlsx. Kapasitas maksimal file yang diupload adalah 5MB" class="form-control-file" id="laporananggaran" name="laporananggaran">
+                                              @if ($errors->has('laporananggaran'))
+                                                <span class="invalid-feedback" role="alert">
+                                                  <strong>Format file salah, sesuaikan dengan ketentuan</strong>
+                                                </span>
+                                              @endif
+                                            </P>
+
                                             </div>
                                         </div>
                                     </div>
