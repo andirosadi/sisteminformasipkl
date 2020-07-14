@@ -189,10 +189,18 @@ class a_pendaftarController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // coba validasi kuota penuh
+        // $request->merge('divisi_id' => )
+        // $pesertacount = DB::table('pendaftars')
+        //     ->join('status', 'pendaftars.status_id', '=', 'status.id')
+        //     ->select('pendaftars.*', 'status.aktivasi')
+        //     ->where(['pendaftars.divisi_id' => $request->divisi_id,
+        //         'status.id' => 1])
+        //     ->count();
         $pendaftar = Pendaftar::findOrFail($id);
         $this->validate(request(),[
             'status_id'=>'required',
-            'divisi_id'=>'required',
+            'divisi_id'=>'required | not_in:' . $pesertacount,
         ]);
         $pendaftar->status_id = $request->status_id;
         $pendaftar->divisi_id = $request->divisi_id;
