@@ -1,7 +1,7 @@
 @component('mail::message')
 # Pembaruan Kuota Peserta PKL PT. Indonesia Power UP Suralaya
 
-Terdapat pembaruan kuota PKL dengan jumlah {{ $kuota->jumlahkuota }}.
+Terdapat pembaruan kuota PKL dengan jumlah {{ $kuota }}.
 Silahkan cek pada halaman pendaftaran berikut!
 
 

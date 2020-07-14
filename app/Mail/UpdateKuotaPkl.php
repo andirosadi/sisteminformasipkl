@@ -19,9 +19,8 @@ class UpdateKuotaPkl extends Mailable
      *
      * @return void
      */
-    public function __construct($pendaftar, $kuota)
+    public function __construct( $kuota)
     {
-        $this->pendaftar = $pendaftar;
         $this->kuota = $kuota;
     }
 

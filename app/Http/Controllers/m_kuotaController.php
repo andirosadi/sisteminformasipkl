@@ -60,24 +60,30 @@ class m_kuotaController extends Controller
             'jumlahkuota'=>'required',
             'statuskuota_id'=>'required',
         ]);
-        $kuota->jumlahkuota = $request->jumlahkuota;
-        $kuota->statuskuota_id = $request->statuskuota_id;
-        $kuota->update();
-        //broadcast email untuk pendaftar yang belum diterima
-        $email = DB::table('pendaftars')
-        ->select('pendaftars.email')
-        ->where('pendaftars.status_id', '=', 2)
-        ->get()->toArray();
-                foreach ([$email] as $recipient) {
-          \Mail::to($recipient)->send(new UpdateKuotaPkl($email, $kuota));
-        }
-        // Notifikasi broadcast email untuk kampus
-        // $emailjurusan = DB::table('pendaftars')
-        // ->select('pendaftars.emailjurusan')
-        // ->get()->toArray();
-        // foreach ([$emailjurusan] as $penerima) {
-        //   \Mail::to($penerima)->send(new UpdateKuotaPklKampus($emailjurusan, $kuota));
-        // }
+        
+	    $kampusEmails = DB::table('pendaftars')
+		    ->selectRaw('emailjurusan as email')
+		    ->distinct()
+		    ->get();
+	
+	    /**
+	     * Koutanya jangan di update dulu
+	     * di email cuman butuh jumlah kouta di input kan
+	     */
+	    if ( $kuota->jumlahkuota !==(int) $request->input('jumlahkuota')){
+		    $pendaftarEmail = Pendaftar::
+		    where([
+		    	'divisi_id'=>$kuota->divisi->id,
+			    'status_id'=>2
+		    ])->get();
+		    \Mail::to($pendaftarEmail)->send(new UpdateKuotaPkl($request->input('jumlahkuota') ));
+	    }
+	    \Mail::to($kampusEmails)->send(new UpdateKuotaPklKampus($request->input('jumlahkuota')));
+	    
+	    $kuota->jumlahkuota = $request->input('jumlahkuota');
+	    $kuota->statuskuota_id = $request->input('statuskuota_id');
+	    $kuota->update();
+	    $kuota->refresh();
 	    /**
 	     * @var $causer User
 	     */
