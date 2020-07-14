@@ -8,6 +8,7 @@ use App\Pendaftar;
 use Illuminate\Http\Request;
 use App\User;
 use App\Divisi;
+use App\Kuota;
 use App\Role;
 use Illuminate\Support\Facades\Auth;
 use Validator;

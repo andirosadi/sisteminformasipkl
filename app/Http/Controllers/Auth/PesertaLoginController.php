@@ -24,9 +24,9 @@ class PesertaLoginController extends Controller
 	| to conveniently provide its functionality to your applications.
 	|
 	*/
-	
+
 	use AuthenticatesUsers;
-	
+
 	/**
 	 * Where to redirect users after login.
 	 *
@@ -34,7 +34,7 @@ class PesertaLoginController extends Controller
 	 */
 	protected $guard = 'pendaftar';
 	protected $redirectTo = '/home';
-	
+
 	/**
 	 * Create a new controller instance.
 	 *
@@ -46,18 +46,18 @@ class PesertaLoginController extends Controller
 //        $this->middleware('auth');
 //        $this->user = \Auth::user();
 	}
-	
+
 	public function showLoginForm()
 	{
 		return view('auth.pesertaLogin');
 	}
-	
+
 	public function guard()
 	{
 //        return auth()->guard('pendaftars');
 		return Auth::guard('pendaftars');
 	}
-	
+
 	public function showRegisterPage()
 	{
 		//Kuota Humas
@@ -73,7 +73,7 @@ class PesertaLoginController extends Controller
 			->where(['pendaftars.divisi_id' => 1,
 				'status.id' => 1])
 			->get();
-		
+
 		//Kuota SIS
 		$kuotasis = DB::table('kuotas')
 			->join('divisi', 'kuotas.divisi_id', '=', 'divisi.id')
@@ -87,7 +87,7 @@ class PesertaLoginController extends Controller
 			->where(['pendaftars.divisi_id' => 2,
 				'status.id' => 1])
 			->get();
-		
+
 		//Kuota keuangan
 		$kuotakeuangan = DB::table('kuotas')
 			->join('divisi', 'kuotas.divisi_id', '=', 'divisi.id')
@@ -101,7 +101,7 @@ class PesertaLoginController extends Controller
 			->where(['pendaftars.divisi_id' => 3,
 				'status.id' => 1])
 			->get();
-		
+
 		//Kuota Managerial Operasi Unit 1 - 4
 		$kuotamou1 = DB::table('kuotas')
 			->join('divisi', 'kuotas.divisi_id', '=', 'divisi.id')
@@ -115,7 +115,7 @@ class PesertaLoginController extends Controller
 			->where(['pendaftars.divisi_id' => 4,
 				'status.id' => 1])
 			->get();
-		
+
 		//Kuota Managerial Operasi Unit 5 - 7
 		$kuotamou5 = DB::table('kuotas')
 			->join('divisi', 'kuotas.divisi_id', '=', 'divisi.id')
@@ -129,7 +129,7 @@ class PesertaLoginController extends Controller
 			->where(['pendaftars.divisi_id' => 5,
 				'status.id' => 1])
 			->get();
-		
+
 		//Kuota Managerial Pemeliharaan Unit 1 - 4
 		$kuotampu1 = DB::table('kuotas')
 			->join('divisi', 'kuotas.divisi_id', '=', 'divisi.id')
@@ -143,7 +143,7 @@ class PesertaLoginController extends Controller
 			->where(['pendaftars.divisi_id' => 6,
 				'status.id' => 1])
 			->get();
-		
+
 		//Kuota Managerial Pemeliharaan Unit 5 - 7
 		$kuotampu5 = DB::table('kuotas')
 			->join('divisi', 'kuotas.divisi_id', '=', 'divisi.id')
@@ -160,13 +160,14 @@ class PesertaLoginController extends Controller
 		return view('auth.pesertaRegister',
 			compact('kuotasis', 'siscount', 'kuotahumas', 'humascount', 'kuotakeuangan', 'keuangancount', 'kuotamou1', 'mou1count', 'kuotamou5', 'mou5count', 'kuotampu1', 'mpu1count', 'kuotampu5', 'mpu5count'));
 	}
-	
-	
+
+
 	public function register(Request $request)
 	{
 		$request->validate([
 			'name' => 'required|string|max:255',
-			'email' => 'required|string|max:199|unique:pendaftars',
+			'email' => 'required|string|max:100|unique:pendaftars',
+			'emailjurusan' => 'required|string|max:100',
 			'password' => 'required|string|min:6|confirmed',
 			'suratpermohonan' => 'required|file|mimes:doc,docx,pdf|max:5000'
 		]);
@@ -176,6 +177,7 @@ class PesertaLoginController extends Controller
 		$pendaftar = new Pendaftar;
 		$pendaftar->name = $request->name;
 		$pendaftar->email = $request->email;
+		$pendaftar->emailjurusan = $request->emailjurusan;
 		$pendaftar->password = bcrypt($request->password);
 		$pendaftar->nim = $request->nim;
 		$pendaftar->sekolah = $request->sekolah;
@@ -187,14 +189,14 @@ class PesertaLoginController extends Controller
 		/**
 		 */
 		\Mail::to($pendaftar->email)->send(new NotifPendaftaranPeserta($pendaftar));
-		
-		
+
+
 		$notifikasi = new NotifikasiPesertaBaru($pendaftar, $pendaftar);
 		$notifikasi->notify();
-		
+
 		return view('homeadmin')->with('message, Pendaftaran berhasil dilakukan');
 	}
-	
+
 	public function login(Request $request)
 	{
 		if (Auth::guard('pendaftar')->attempt(['email' => $request->email, 'password' => $request->password, 'status_id'=>1])) {

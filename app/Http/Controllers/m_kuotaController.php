@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Notifications\Admin\NotifikasiKouta;
 use App\Mail\UpdateKuotaPkl;
+use App\Mail\UpdateKuotaPklKampus;
 use Illuminate\Http\Request;
 use App\User;
 use App\Pendaftar;
@@ -62,14 +63,21 @@ class m_kuotaController extends Controller
         $kuota->jumlahkuota = $request->jumlahkuota;
         $kuota->statuskuota_id = $request->statuskuota_id;
         $kuota->update();
+        //broadcast email untuk pendaftar yang belum diterima
         $email = DB::table('pendaftars')
         ->select('pendaftars.email')
         ->where('pendaftars.status_id', '=', 2)
         ->get()->toArray();
-        // $pendaftar = Pendaftar::where('status_id', '=', 2)->get();
-        foreach ([$email] as $recipient) {
+                foreach ([$email] as $recipient) {
           \Mail::to($recipient)->send(new UpdateKuotaPkl($email, $kuota));
         }
+        // Notifikasi broadcast email untuk kampus
+        // $emailjurusan = DB::table('pendaftars')
+        // ->select('pendaftars.emailjurusan')
+        // ->get()->toArray();
+        // foreach ([$emailjurusan] as $penerima) {
+        //   \Mail::to($penerima)->send(new UpdateKuotaPklKampus($emailjurusan, $kuota));
+        // }
 	    /**
 	     * @var $causer User
 	     */
