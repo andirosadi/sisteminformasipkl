@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\PenetapanMentor;
 use Illuminate\Http\Request;
 use App\User;
 use App\Divisi;
@@ -51,7 +52,7 @@ class mentorController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'divisi_id' => ['unique:users'],
+            'divisi_id' => ['required'],
         ]);
         User::create([
             'name' => $request->name,
@@ -62,6 +63,10 @@ class mentorController extends Controller
             'jabatan' => $request->jabatan,
             'password' => Hash::make($request->password),
         ]);
+        $user = DB::table('users')
+        ->select('users.*')
+        ->where('users.email', '=', $request->email)->first();
+        \Mail::to($user->email)->send(new PenetapanMentor($user));
         return redirect('mentor')->with('message', 'Mentor berhasil di tambah');
     }
 

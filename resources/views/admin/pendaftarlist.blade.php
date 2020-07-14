@@ -49,6 +49,7 @@
                                         <tr>
                                             <th scope="col"><b>Nama</b></th>
                                             <th scope="col"><b>Email</b></th>
+                                            <th scope="col"><b>Email Jurusan</b></th>
                                             <th scope="col"><b>NIM</b></th>
                                             <th scope="col"><b>Instansi</b></th>
                                             <th scope="col"><b>Fakultas</b></th>
@@ -66,6 +67,7 @@
                                         <tr>
                                             <td>{{$user->name}}</td>
                                             <td>{{$user->email}}</td>
+                                            <td>{{$user->emailjurusan}}</td>
                                             <td>{{$user->nim}}</td>
                                             <td>{{$user->sekolah}}</td>
                                             <td>{{$user->fakultas}}</td>

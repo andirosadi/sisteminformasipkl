@@ -43,7 +43,7 @@ class   uploadAnggaranController extends Controller
     {
         $this -> validate($request,[
             'judul' =>'required|max:100',
-            'laporananggaran' =>'required|file|max:5000'
+            'laporananggaran' =>'required|file|mimes:doc,docx,pdf,xls,xlsx|max:5000'
         ]);
         $uploadedFile =$request->file('laporananggaran');
         $uploadedFile->getClientOriginalName();
@@ -56,10 +56,10 @@ class   uploadAnggaranController extends Controller
 	     * @var $user User
 	     */
         $user = auth()->user();
-        
+
         $notifikasi = new NotifikasiAnggaranPKL($user, $anggaran);
         $notifikasi->notify();
-        
+
         return redirect('laporananggaran/index')->with('message','Anggaran berhasil ditambah.');
 //            ->back()
 //            ->withSuccess();

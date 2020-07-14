@@ -1,14 +1,6 @@
 @extends('peserta.pesertaLayout.peserta_design')
 @section('content')
 <div class="row">
-    @if (count($errors)>0)
-    <div class="alert alert-danger" role="alert" style="border-radius:10px!important;">
-        <h4 class="alert-heading mdi mdi-file-document">Kesalahan Laporan!</h4>
-        @foreach ($errors->all() as $error)
-        <li>{{ $error }}</li>
-        @endforeach
-    </div>
-    @endif
 </div>
 <div class="row">
     <div class="card shadow-sm" style="border-radius:10px!important;">
@@ -27,14 +19,24 @@
                         <div class="form-group">
                             <div class="alert alert-success" role="alert" style="border-radius:10px!important;">
                                 <h4 class="alert-heading mdi mdi-file-document">Ketentuan File!</h4>
-                                <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+                                <p>Format laporan PKL yang diunggah adalah file dengan ektensi .doc .docx .PDF dengan kapasitasi maksimal 5MB.</p>
                             </div>
                         </div>
                         <div class="form-group">
                             <div for="laporan" class="card-title">Laporan PKL
-                                <P><input type="file" class="form-control-file" id="laporan" name="laporan" required></P>
+                                <P>
+                                  <input type="file" class="form-control-file" id="laporan" name="laporan" required>
+                                </P>
                             </div>
                         </div>
+                        @if (count($errors)>0)
+                        <div class="alert alert-danger" role="alert" style="border-radius:10px!important;">
+                            <h4 class="alert-heading mdi mdi-file-document">Kesalahan Laporan!</h4>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </div>
+                        @endif
                     </section>
                     <div class="text-right">
                         <button type="submit" class="btn btn-primary">Submit</button>
