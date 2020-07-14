@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 /**
  * App\Divisi
@@ -24,5 +25,8 @@ class Divisi extends Model
     public function user()
     {
         return $this->belongsToMany('App\User','divisi_id');
+    }
+    public function kouta():HasOne{
+    	return $this->hasOne(Kuota::class);
     }
 }

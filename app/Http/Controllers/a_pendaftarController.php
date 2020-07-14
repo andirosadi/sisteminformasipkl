@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Kuota;
 use App\Mail\PenerimaanPesertaKerjaPraktik;
 use App\Mail\PenerimaanPesertaPkl;
 use App\Pendaftar;
@@ -186,14 +187,46 @@ class a_pendaftarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Pendaftar $a_pendaftar)
     {
-        $pendaftar = Pendaftar::findOrFail($id);
-        $this->validate(request(),[
-            'status_id'=>'required',
-            'divisi_id'=>'required',
-        ]);
-        $pendaftar->status_id = $request->status_id;
+	    /**
+	     * Validasi divisi_id biar g error
+	     */
+    	$request->validate([
+    		'status_id'=>'required|numeric',
+		    'divisi_id'=>'required|numeric|exists:divisi,id',
+		    ]);
+    	if ( (int) $request->input('status_id') === 1){
+		    /**
+		     * Divisi yang mau di pake untuk perbandingan kouta
+		     */
+    		$divisi =  Divisi::find($request->input('divisi_id'));
+    		/*
+    		 * Relasi divisi one to one ke kuota
+    		 */
+		    $kouta =  $divisi->kouta;
+		    /**
+		     * Query jumlah quotanya
+		     */
+		    $jumPesertaDivisi  = (int) Pendaftar::where([
+			    'divisi_id'=>$request->input('divisi_id'),
+			    'status_id'=>1
+		    ])->count();
+		
+		    $request->merge(['kouta'=>$jumPesertaDivisi]);
+		    
+		    $validator = Validator::make($request->all(), [
+			    'status_id'=>'required',
+			    'divisi_id'=>'required',
+			    'kouta'=>'required|lt:'. $kouta->jumlahkuota
+		    ], [
+			    'kouta.lt'=>'Kouta peserta yang di terima divisi '.$divisi->namadivisi. ' adalah '. $kouta->jumlahkuota. " peserta"
+		    ]);
+		    $validator->validate();
+	    }
+	    $pendaftar = $a_pendaftar;
+	    
+	    $pendaftar->status_id = $request->status_id;
         $pendaftar->divisi_id = $request->divisi_id;
         $pendaftar->update();
         if ($pendaftar->divisi_id != 8 && $pendaftar->status_id != 2)

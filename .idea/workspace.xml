@@ -20,7 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55b344e1-958d-4246-8bfe-d439bb21d54a" name="Default Changelist" comment="add notification feature">
+      <change afterPath="$PROJECT_DIR$/.idea/composerJson.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Divisi.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Divisi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/a_pendaftarController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/a_pendaftarController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/aktivasipendaftar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/aktivasipendaftar.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +165,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="addDependency /home/imandidik/Desktop/valet/pkl" value="--dev" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../jsdev/isea-next" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -191,7 +195,6 @@
       <command value="artisan make:controller NotificationController -r" />
       <command value="artisan route:clear" />
       <command value="artisan config:cache" />
-      <command value="artisan route:list" />
       <command value="artisan make:notification Admin/NotifikasiAnggaranPkl" />
       <command value="artisan make:test TEST_notifikasikouta" />
       <command value="artisan make:test test_NOTIFIKASI_KOUTA" />
@@ -212,6 +215,7 @@
       <command value="artisan preset react" />
       <command value="artisan view:cache" />
       <command value="artisan view:clear" />
+      <command value="artisan route:list" />
     </option>
   </component>
   <component name="RunManager" selected="PHPUnit.test_NOTIFIKASI_KOUTA">
@@ -380,10 +384,6 @@
     </state>
     <state x="745" y="207" width="419" height="678" key="#com.intellij.ide.util.MemberChooser/0.27.1920.1017@0.27.1920.1017" timestamp="1591471025718" />
     <state x="2665" y="207" width="429" height="678" key="#com.intellij.ide.util.MemberChooser/1920.27.1920.1017/0.0.1920.1080@1920.27.1920.1017" timestamp="1591467823131" />
-    <state x="363" y="91" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1584094882686">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="363" y="91" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1584094882686" />
     <state x="2342" y="27" width="1056" height="1017" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1591466526729">
       <screen x="1920" y="27" width="1920" height="1017" />
     </state>
@@ -396,29 +396,34 @@
       <screen x="1920" y="27" width="1920" height="1017" />
     </state>
     <state x="2684" y="448" width="381" height="182" key="ComposerInitDialogKey/1920.27.1920.1017/0.0.1920.1080@1920.27.1920.1017" timestamp="1591442191989" />
-    <state x="2658" y="285" width="424" height="520" key="FileChooserDialogImpl" timestamp="1591541291672">
-      <screen x="1920" y="27" width="1920" height="1018" />
+    <state x="722" y="294" width="424" height="520" key="FileChooserDialogImpl" timestamp="1594748705463">
+      <screen x="0" y="27" width="1878" height="1053" />
     </state>
+    <state x="722" y="294" key="FileChooserDialogImpl/0.27.1878.1053@0.27.1878.1053" timestamp="1594748705463" />
     <state x="2658" y="285" width="424" height="520" key="FileChooserDialogImpl/1920.27.1920.1017/0.0.1920.1080@1920.27.1920.1017" timestamp="1591448381677" />
     <state x="2658" y="285" key="FileChooserDialogImpl/1920.27.1920.1018/0.0.1920.1080@1920.27.1920.1018" timestamp="1591541291672" />
-    <state width="1897" height="411" key="GridCell.Tab.0.bottom" timestamp="1591533165069">
-      <screen x="0" y="27" width="1920" height="1017" />
+    <state width="1855" height="429" key="GridCell.Tab.0.bottom" timestamp="1594750388169">
+      <screen x="0" y="27" width="1878" height="1053" />
     </state>
+    <state width="1855" height="429" key="GridCell.Tab.0.bottom/0.27.1878.1053@0.27.1878.1053" timestamp="1594750388169" />
     <state width="1897" height="411" key="GridCell.Tab.0.bottom/0.27.1920.1017@0.27.1920.1017" timestamp="1591533165069" />
     <state width="1897" height="411" key="GridCell.Tab.0.bottom/1920.27.1920.1017/0.0.1920.1080@1920.27.1920.1017" timestamp="1591461125396" />
-    <state width="1897" height="411" key="GridCell.Tab.0.center" timestamp="1591533165069">
-      <screen x="0" y="27" width="1920" height="1017" />
+    <state width="1855" height="429" key="GridCell.Tab.0.center" timestamp="1594750388169">
+      <screen x="0" y="27" width="1878" height="1053" />
     </state>
+    <state width="1855" height="429" key="GridCell.Tab.0.center/0.27.1878.1053@0.27.1878.1053" timestamp="1594750388169" />
     <state width="1897" height="411" key="GridCell.Tab.0.center/0.27.1920.1017@0.27.1920.1017" timestamp="1591533165069" />
     <state width="1897" height="411" key="GridCell.Tab.0.center/1920.27.1920.1017/0.0.1920.1080@1920.27.1920.1017" timestamp="1591461125396" />
-    <state width="1897" height="411" key="GridCell.Tab.0.left" timestamp="1591533165068">
-      <screen x="0" y="27" width="1920" height="1017" />
+    <state width="1855" height="429" key="GridCell.Tab.0.left" timestamp="1594750388168">
+      <screen x="0" y="27" width="1878" height="1053" />
     </state>
+    <state width="1855" height="429" key="GridCell.Tab.0.left/0.27.1878.1053@0.27.1878.1053" timestamp="1594750388168" />
     <state width="1897" height="411" key="GridCell.Tab.0.left/0.27.1920.1017@0.27.1920.1017" timestamp="1591533165068" />
     <state width="1897" height="411" key="GridCell.Tab.0.left/1920.27.1920.1017/0.0.1920.1080@1920.27.1920.1017" timestamp="1591461125396" />
-    <state width="1897" height="411" key="GridCell.Tab.0.right" timestamp="1591533165069">
-      <screen x="0" y="27" width="1920" height="1017" />
+    <state width="1855" height="429" key="GridCell.Tab.0.right" timestamp="1594750388169">
+      <screen x="0" y="27" width="1878" height="1053" />
     </state>
+    <state width="1855" height="429" key="GridCell.Tab.0.right/0.27.1878.1053@0.27.1878.1053" timestamp="1594750388169" />
     <state width="1897" height="411" key="GridCell.Tab.0.right/0.27.1920.1017@0.27.1920.1017" timestamp="1591533165069" />
     <state width="1897" height="411" key="GridCell.Tab.0.right/1920.27.1920.1017/0.0.1920.1080@1920.27.1920.1017" timestamp="1591461125396" />
     <state x="659" y="239" width="591" height="607" key="NewPhpClassDialog" timestamp="1591469755488">
@@ -446,14 +451,16 @@
       <screen x="1920" y="27" width="1920" height="1017" />
     </state>
     <state x="2649" y="448" width="461" height="181" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.27.1920.1017/0.0.1920.1080@1920.27.1920.1017" timestamp="1591467291358" />
-    <state x="624" y="243" width="672" height="677" key="run.anything.popup" timestamp="1591513510204">
-      <screen x="0" y="27" width="1920" height="1017" />
+    <state x="610" y="251" width="672" height="701" key="run.anything.popup" timestamp="1594750282691">
+      <screen x="0" y="27" width="1878" height="1053" />
     </state>
+    <state x="610" y="251" width="672" height="701" key="run.anything.popup/0.27.1878.1053@0.27.1878.1053" timestamp="1594750282691" />
     <state x="624" y="243" width="672" height="677" key="run.anything.popup/0.27.1920.1017@0.27.1920.1017" timestamp="1591513510204" />
     <state x="2544" y="243" width="672" height="677" key="run.anything.popup/1920.27.1920.1017/0.0.1920.1080@1920.27.1920.1017" timestamp="1591462552570" />
-    <state x="2543" y="250" width="672" height="679" key="search.everywhere.popup" timestamp="1591540260879">
-      <screen x="1920" y="27" width="1920" height="1018" />
+    <state x="609" y="258" width="672" height="703" key="search.everywhere.popup" timestamp="1594752162468">
+      <screen x="0" y="27" width="1878" height="1053" />
     </state>
+    <state x="609" y="258" width="672" height="703" key="search.everywhere.popup/0.27.1878.1053@0.27.1878.1053" timestamp="1594752162468" />
     <state x="623" y="250" width="672" height="678" key="search.everywhere.popup/0.27.1920.1017@0.27.1920.1017" timestamp="1591515493749" />
     <state x="2543" y="250" width="672" height="678" key="search.everywhere.popup/1920.27.1920.1017/0.0.1920.1080@1920.27.1920.1017" timestamp="1591461018362" />
     <state x="2543" y="250" width="672" height="679" key="search.everywhere.popup/1920.27.1920.1018/0.0.1920.1080@1920.27.1920.1018" timestamp="1591540260879" />

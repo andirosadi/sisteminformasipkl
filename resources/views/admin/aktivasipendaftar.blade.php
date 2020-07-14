@@ -174,6 +174,11 @@
                 {{method_field('PATCH')}}
                 <div class="card-body">
                     <h4 class="card-title">Aktivasi Pendaftar</h4>
+                  @error("kouta")
+                  <div class="alert alert-danger">
+                    {{$message}}
+                  </div>
+                  @enderror
                     <div class="form-group row">
                         <label for="name" class="col-sm-3 text-right control-label col-form-label">Name</label>
                         <div class="col-sm-9">
